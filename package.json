@@ -1,0 +1,50 @@
+{
+  "name": "cursor-puzzle",
+  "displayName": "Puzzle — Agent Music",
+  "description": "Plays music when Cursor AI agent is thinking",
+  "version": "0.1.0",
+  "publisher": "puzzle",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": ["Other"],
+  "activationEvents": ["onStartupFinished"],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      { "command": "puzzle.setupHooks", "title": "Puzzle: Setup Agent Hooks" },
+      { "command": "puzzle.removeHooks", "title": "Puzzle: Remove Agent Hooks" },
+      { "command": "puzzle.play", "title": "Puzzle: Play Music" },
+      { "command": "puzzle.pause", "title": "Puzzle: Pause Music" },
+      { "command": "puzzle.toggle", "title": "Puzzle: Toggle Music" }
+    ],
+    "configuration": {
+      "title": "Puzzle — Agent Music",
+      "properties": {
+        "puzzle.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable or disable agent music"
+        },
+        "puzzle.volume": {
+          "type": "number",
+          "default": 50,
+          "minimum": 0,
+          "maximum": 100,
+          "description": "Playback volume (0–100)"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.85.0",
+    "@types/node": "^20.0.0",
+    "typescript": "^5.3.0"
+  }
+}
