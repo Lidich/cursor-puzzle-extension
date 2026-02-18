@@ -3,7 +3,7 @@
   "displayName": "Puzzle — Agent Music",
   "description": "Plays music when Cursor AI agent is thinking",
   "version": "0.1.0",
-  "publisher": "puzzle",
+  "publisher": "Lidich",
   "license": "MIT",
   "engines": {
     "vscode": "^1.85.0"
